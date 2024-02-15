@@ -189,7 +189,7 @@ func main() {
 	router := mux.NewRouter()
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	// Create a new client and connect to the server
-	client, _ = mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb+srv://naman2130:m6g4mL2df22KjjVm@cluster0.wxiinke.mongodb.net/?retryWrites=true&w=majority").SetServerAPIOptions(serverAPI))
+	client, _ = mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb+srv://naman2130:<password>@cluster0.wxiinke.mongodb.net/?retryWrites=true&w=majority").SetServerAPIOptions(serverAPI))
 
 	router.HandleFunc("/api/user/login", userLogin).Methods("POST")
 	router.HandleFunc("/api/user/signup", userSignup).Methods("POST")
